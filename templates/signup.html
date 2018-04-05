@@ -3,21 +3,23 @@
 {% block content %}
 
 	<h1>Signup</h1>
-	<form method="post">
-		<label for="username">Username</label>
-			<input name="username" value="" type="text" />
-            <p>{% if error %}{{error}}{% endif %}</p>
-			<label for="password">Password</label>
-			<input name="password" type="password" />
-			<span class="error"></span>
-		<label for="verify">Verify Passsword</label>
-			<input name="verify" type="password" />
-			<span class="error"></span>
-		<label for="email">Email (optional)</label>
-			<input name="email" value="" type="text" />
-			<span class="error"></span>
-		<input type="submit" value="Submit" />
-	</form>
+    <form method="post">
+        <label for="username">Username</label>
+        <input name="username" value="" type="text" />
+            
+            <span class="error">{{error}}</span>
+            
+        <label for="password">Password</label>
+            <input name="password" type="password" />
+            <span class="error"></span>
+        <label for="verify">Verify Passsword</label>
+            <input name="verify" type="password" />
+            <span class="error"></span>
+        <label for="email">Email (optional)</label>
+            <input name="email" value="" type="text" />
+            <span class="error"></span>
+        <input type="submit" value="Submit" />
+</form>
 	
 			
 			

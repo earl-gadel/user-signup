@@ -14,7 +14,7 @@ def index():
 
     #error displayed when user leaves any of the following fields empty: username, password, verify password
             error = "Please fill in this field"
-            return redirect("/?error=" + error)
+            return render_template('signup.html', error=error)
         return render_template('signup.html', username=username, password=password, verify=verify)
     return render_template('signup.html')
 
