@@ -8,14 +8,24 @@ app.config['DEBUG'] = True
 def index():
     if request.method == 'POST':
         username = request.form['username']
-        password = 't'#request.form['password']
-        verify = 't' #request.form['verify']
+        password = request.form['password']
+        verify = request.form['verify']
         if username == '':
+            error_user = "That's not a valid username"
 
-    #error displayed when user leaves any of the following fields empty: username, password, verify password
-            error = "Please fill in this field"
-            return render_template('signup.html', error=error)
-        return render_template('signup.html', username=username, password=password, verify=verify)
+        elif password == '':
+            error_pass = "That's not a valid password"
+
+            return render_template('signup.html', error_user=error_user, error_pass=error_pass)
+        #elif len(password) < 3 or len(password) > 20:
+            #error_pass = "That's not a valid password"
+            #return render_template('signup.html', error_pass=error_pass)
+        #elif verify == '':
+            #error_verify = "Passwords don't match"
+            #return render_template('signup.html', error_verify=error_verify)
+
+
+        #return render_template('signup.html', username=username, password=password, verify=verify)
     return render_template('signup.html')
 
 app.run()
