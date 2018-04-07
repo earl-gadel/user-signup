@@ -10,23 +10,23 @@ def index():
     error_pass = ''
     error_verify = ''
 
-    #if request.method == 'POST':
-    username = request.form['username']
-    #password = request.form['password']
-    #verify = request.form['verify']
-    for i in username:
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        verify = request.form['verify']
+        #for i in username:
         if username == '':
             error_user = "That's not a valid username"
-            break
+            #return render_template('signup.html', error_user=error_user)
 
-    for i in password:
+        #for i in password:
         if password == '':
             error_pass = "That's not a valid password"
-            break
+            return render_template('signup.html', error_user=error_user, error_pass=error_pass)
         #return render_template('signup.html', error_user=error_user, error_pass=error_pass)
         #elif len(password) < 3 or len(password) > 20:
             #error_pass = "That's not a valid password"
-            #return render_template('signup.html', error_pass=error_pass)
+    #return render_template('signup.html', error_pass=error_pass)
         #elif verify == '':
             #error_verify = "Passwords don't match"
             #return render_template('signup.html', error_verify=error_verify)
