@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -47,8 +47,6 @@ def index():
         return render_template('signup.html', error_user=error_user, error_pass=error_pass,
                                        error_verify=error_verify, error_email=error_email, username=username, email=email)
 
-
-        #return render_template('signup.html', username=username, password=password, verify=verify)
     return render_template('signup.html')
 
 
